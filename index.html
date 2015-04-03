@@ -15,7 +15,13 @@
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
 	
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="./js/signup.js"></script>
+	 <link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+	<!-- <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script> -->
+	<!-- FormValidation plugin and the class supports validating Bootstrap form -->
+<script src="./vendor/formvalidation/dist/jquery.validate.js"></script>
+<script src="./vendor/formvalidation/dist/additional-methods.js"></script>
+<!-- <script src="./vendor/formvalidation/dist/js/framework/bootstrapValidator.min.js"></script> -->	<script src="./js/signup.js"></script>
+<script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
 </head>
 <body>
 	<!-- Page Header -->
@@ -32,18 +38,18 @@
 				</div>
 			
 				<div class="collapse navbar-collapse">
-					<form class="navbar-form navbar-right" method="post" action="#">
+					<form class="navbar-form navbar-right" method="post" action="#" id="loginForm">
 						<div class="form-group">
-							<input type="email" placeholder="Email" name="email" id="loginemail" class="form-control" />
+							<input type="email" placeholder="Email" name="email" id="loginemail" class="form-control required" />
 						</div>
 						<div class="form-group">
-							<input type="password" placeholder="Password" name="password" id="loginpassword" class="form-control" />
+							<input type="password" placeholder="Password" name="password" id="loginpassword" class="form-control required" />
 						</div>
 						
 							<!-- <a href="www.google.com">Forgot</a> -->						
 						<button type="submit" class="btn btn-success" id="login" value="Log In">Log In</button>
 						<!-- <button type="submit" class="btn btn-success">Sign Up</button> -->
-						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+						<button type="button" class="btn btn-success" id="sign" data-toggle="modal" data-target="#myModal">
   Sign Up
 </button>
 						<!-- </div> -->
@@ -75,19 +81,19 @@
       </div>
       <div class="modal-body">
       	
-        <form class="form-group" method="post" action="#" >
+        <form class="form-group" method="post" action="#" id="signupform" >
         	<div class="form-group">
-							<input type="text" placeholder="First Name" name="firstName" id="firstName" class="form-control" />
+							<input type="text" placeholder="First Name" name="firstName" id="firstName" class="form-control required" />
 						</div>
 						<div class="form-group">
 							<div class="form-group">
-							<input type="text" placeholder="Last Name" name="lastName" id="lastName" class="form-control" />
+							<input type="text" placeholder="Last Name" name="lastName" id="lastName" class="form-control required" />
 						</div>
 						<div class="form-group">
-							<input type="email" placeholder="Email" name="email" id="email"class="form-control" />
+							<input type="email" placeholder="Email" name="email" id="signUpEmail"class="form-control required" />
 						</div>
 						<div class="form-group">
-							<input type="password" placeholder="Password" name="password"  id="password" class="form-control" />
+							<input type="password" placeholder="Password" name="password"  id="signUpPassword" class="form-control required" />
 						</div>
 						
 						 <!-- <button type="submit" class="btn btn-success">Sign Up</button> -->
