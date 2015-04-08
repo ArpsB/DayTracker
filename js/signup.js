@@ -145,6 +145,8 @@ $(document).ready(function(){
         $('#myModal').on('hidden.bs.modal', function (element) {       
  	 		$('form input').tooltipster('hide');
 		});
+		
+		 
 		$('#sign').on('click', function (element) {
 		        	//alert("here");
 		 	 $('form input').tooltipster('hide');

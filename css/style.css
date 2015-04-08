@@ -1,6 +1,6 @@
-/*body {
+body {
 	height:100%;
-}*/
+}
 .navbar-custom {
 	  background-color:#46B235;
 	  background-image: none;
@@ -20,17 +20,91 @@
     		background-position:center;
     	
 }
-#topRow{
-    		margin-top:100px;
-    		text-align:center;
-    	}
-.tiles {
+.box {
+	border: 1px solid  black;
 	
-	background-color:yellow;
+	 /*display:flex;*/
+	 /*flex-wrap:wrap;
+	 flex-basis:10px;*/
+    /*align-items:center;*/
+ 
+   
+    height:700px;
+    padding:10px;
+ 
+}
+#bio {
+			background-image:url('../images/person.jpeg');
+    		background-size:cover;
+    		background-position:center;
+	
+}
+#food {
+	background-image:url('../images/mountain.jpeg');
+    		background-size:cover;
+    		background-position:center;
+    	
+	
+}
+#activity {
+	background-image:url('../images/nomad.jpg');
+    		background-size:cover;
+    		background-position:center;
+	
+}
+.row-class {
+	
+	margin-left: 80px ;
+	margin-top: 10px ;
 	
 }
 
-.row.no-gutters {
+
+
+#topRow{
+    		margin-top:100px;
+    		text-align:center;
+    		
+    	}
+#row1{
+    		margin-top:50px;
+    		height:40px;
+    		background-color:teal;
+    		display: flex;
+    		align-items:center;
+    		text-align:center;
+	}
+    	#row2 {
+    		
+    		margin-top:90px;
+    	}
+    
+.tiles {
+	
+	background-color:#ADC9F4;
+	
+
+}
+#BC .slider-selection {
+    background: blue;
+  }
+  #RC .slider-selection {
+    background: yellow;
+  }
+   #jointid .slider-selection {
+    background: lightcoral;
+  }
+   #skinid .slider-selection {
+    background: lightsalmon;
+  }
+
+  .read{
+  		background: black;
+  	color:black;
+  }
+
+
+/*.row.no-gutters {
    margin-right: 0;
    margin-left: 0;
 }
@@ -38,10 +112,9 @@
 .row.no-gutters > [class*=" col-"] {
    padding-right: 0;
    padding-left: 0;
-}
-
+}*/
 	
-	/*z-index: 1000;*/}
+	/*z-index: 1000;*/
 /*.arpita {
 	beforeShow : function() {
     

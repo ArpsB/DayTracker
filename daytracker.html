@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>DayTracker Login Screen</title> 
+	<title>DayTracker</title> 
 	<meta charset="utf-8" />
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
@@ -15,10 +15,13 @@
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
 	
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/slider.css">
+	<script src="./js/daytracker.js"></script>
+	<script src="./js/bootstrap-slider.js"></script>
 </head>
 <body>
 	
-	<nav class="navbar navbar-default navbar-header navbar-fixed-top navbar-custom" id="pageHeader">
+	<nav class="navbar navbar-default navbar-header navbar-fixed-top navbar-custom" id="pageHeader1">
 	    <div class="container">
 	    	<div class="navbar-header">
 					<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -41,15 +44,122 @@
 	    </div>
 	</nav>
 	<!-- Content -->
-	
-      <div class="row no-gutters tiles" id="topRow">
-        <div class="col-sm-3 kitten-box"><img src="http://placekitten.com/g/600" alt="kittens"></div>
-        <div class="col-sm-3  kitten-box"><img src="http://placekitten.com/g/600" alt="kittens"></div>
-        <div class="col-sm-3  kitten-box"><img src="http://placekitten.com/g/600" alt="kittens"></div>
-        <div class="col-sm-3 kitten-box"><img src="http://placekitten.com/g/600" alt="kittens"></div>
-      </div>
-  
-  
+	<div class="container-fluid">
+		 <form class="form-group" method="post" action="#" id="dayLogForm" >
+		 	<div class="row navbar-fixed-top logDay" id="row1">
+		      	<div class="col-md-12"><button type="submit" name="logDayButton" class="btn btn-primary" id="logDayButton" value="Log Day">Log My Day</button>
+		      	</div>
+		    </div>
+		     
+		    <div class="row tiles" id="row2">
+				  <div class="col-md-4 box" id="bio">
+				  		<div class="row row-class">
+				  			<div class="form-group col-xs-6">
+							    <label for="wakeTime">Wake Up Time</label>
+							    <input type="time" class="form-control" id="wakeTime" placeholder="Wake Up Time">
+						  </div>
+		  				</div>
+		  				<div class="row row-class">
+		  					<div class="form-group col-xs-6">
+							    <label for="sleepTime">Sleep Time</label>
+							    <input type="time" class="form-control" id="sleepTime" placeholder="Sleep Time">
+		  					</div>
+		  				</div>
+		  				<div class="row row-class">
+		  					<div class="form-group col-xs-6">
+								    <label for="weight">Weight</label>
+								    <input type="number" step="any" min="120" max="200" class="form-control" id="weight" placeholder="Weight in lbs">
+		 					 </div>
+		  				</div>
+		 	 </div>
+			  <div class="col-md-4 box" id="food">
+			  		<div class="row row-class">
+				  			<div class="form-group col-xs-7">
+							    <label for="breakfast">Breakfast</label>
+							    <textarea class="form-control" id="breakfast" rows="3"></textarea>
+						  </div>
+		  				</div>
+		  				<div class="row row-class">
+		  					<div class="form-group col-xs-7">
+							    <label for="lunch">Lunch</label>
+							    <textarea class="form-control" id="lunch" rows="3"></textarea>
+		  					</div>
+		  				</div>
+		  				<div class="row row-class">
+		  					<div class="form-group col-xs-7">
+								    <label for="snacks">Snacks</label>
+								   <textarea class="form-control" id="snacks" rows="3"></textarea>
+		 					 </div>
+		  				</div>
+		  				<div class="row row-class">
+		  					<div class="form-group col-xs-7">
+								    <label for="dinner">Dinner</label>
+								   <textarea class="form-control" id="dinner" rows="3"></textarea>
+		 					 </div>
+		  				</div>
+			  </div>
+			  <div class="col-md-4 box" id="activity">
+			  		<div class="row row-class">
+				  			<div class="form-group col-xs-6">
+							    <label for="steps">Steps</label>
+							    <input type="number" min="120" max="20000" class="form-control" id="steps" placeholder="Steps Walked">
+						  </div>
+		  				</div>
+		  				<div class="row row-class">
+		  					<div class="form-group col-xs-6">
+							    <label for="cycle">Cycle</label>
+							    <input type="number" step="any" min="0" max="20" class="form-control" id="cycle" placeholder="Miles Cycles">
+		  					</div>
+		  				</div>
+		  					<div class="row row-class">
+		  					<div class="form-group col-xs-6">
+								    <label for="read">Read 20 pages</label>
+								    <!-- <input type="number" step="any" min="120" max="200" class="form-control" id="read" placeholder="Water in Oz"> -->
+								    <div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-primary active read">
+    <input type="radio" name="options" id="yes" checked> Yes
+  </label>
+  <label class="btn btn-primary read">
+    <input type="radio" name="options" id="no"> No
+  </label>
+</div>
+		 					 </div>
+		  				</div>
+		  				<div class="row row-class">
+		  					<div class="form-group col-xs-6">
+								    <label for="water">Water Consumed</label>
+								  <input type="text"  value="0" data-slider-min="0" data-slider-max="36" data-slider-step="1" id="slideWater"data-slider-id="BC" >
+
+								    <!-- <input type="number" step="any" min="120" max="200" class="form-control" id="weight" placeholder="Water in Oz"> -->
+		 					 </div>
+		  				</div>
+		  			
+		  				<div class="row row-class">
+		  					<div class="form-group col-xs-6">
+								    <label for="mood">Mood</label>
+								    <!-- <input type="number" step="any" min="120" max="200" class="form-control" id="mood" placeholder="Water in Oz"> -->
+								     <input type="text"  value="5" data-slider-min="0" data-slider-max="10" data-slider-step="1" id="mood" data-slider-id="RC" >
+		 					 </div>
+		  				</div>
+		  				<div class="row row-class">
+		  					<div class="form-group col-xs-6">
+								    <label for="joints">Joints</label>
+								    <!-- <input type="number" step="any" min="120" max="200" class="form-control" id="joints" placeholder="Water in Oz"> -->
+								    <input type="text"  value="5" data-slider-min="0" data-slider-max="10" data-slider-step="1" id="joints" data-slider-id="jointid" >
+		 					 </div>
+		  				</div>
+		  				<div class="row row-class">
+		  					<div class="form-group col-xs-6">
+								    <label for="skin">Skin</label>
+								    <!-- <input type="number" step="any" min="120" max="200" class="form-control" id="skin" placeholder="Water in Oz"> -->
+								    <input type="text"  value="5" data-slider-min="0" data-slider-max="10" data-slider-step="1" id="skin" data-slider-id="skinid" >
+		 					 </div>
+		  				</div>
+			  	
+			  </div>
+		     </div>
+     	</form>
+	 </div>
   
   
   
