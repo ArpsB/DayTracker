@@ -55,8 +55,11 @@ $(document).ready(function(){
                     data:dataString,
                     success: function(response){
                         if (response =='SuccessloggedIn'){
-				window.location='daytracker.html';
+				window.location='daytracker_screen.php';
+				
+				//$("#username").text("kishore");
 				}else {
+				
 					  $('#login').tooltipster({
                 			content: $('<span>Please enter the correct credentials</span>')
             			});
@@ -126,7 +129,7 @@ $(document).ready(function(){
                     data:dataString,
                     success: function(response){
                         if (response =='Successcorrect'){
-							window.location='daytracker.html';
+							window.location='daytracker_screen.php';
 						}else {
 								alert("Something went wrong. User not created");
 								window.location='index.html';
