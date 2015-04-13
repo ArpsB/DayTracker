@@ -8,9 +8,15 @@ $(document).ready(function(){
 	 	trigger: 'custom', 
     onlyOne: false,    
     position: 'top-right',
-  
-
+    autoClose:false,
 	 });
+	  $('#signupform input').tooltipster({
+	 	trigger: 'custom', 
+    onlyOne: false,    
+    position: 'top-right',
+    autoClose:false,
+	 });
+	 
 	 // Validate Login 
 	$("#loginForm").validate({
             rules: {
@@ -36,6 +42,9 @@ $(document).ready(function(){
             if(newError !== '' && newError !== lastError){
                 $(element).tooltipster('content', newError);
                 $(element).tooltipster('show');
+            }else { //added else to take care of tooltip error on modal and logo
+            	$(element).tooltipster('show');
+            	
             }
         },
         success: function (label, element) {
@@ -57,7 +66,6 @@ $(document).ready(function(){
                         if (response =='SuccessloggedIn'){
 				window.location='daytracker_screen.php';
 				
-				//$("#username").text("kishore");
 				}else {
 				
 					  $('#login').tooltipster({
@@ -95,20 +103,25 @@ $(document).ready(function(){
                                       
             },
             messages: {
-            	loginemail: "Please enter a valid email address",  
-                loginpassword: "Please enter the Password",                    
+            	signUpEmail: "Please enter a valid email address",  
+                signUpPassword: "Please enter the Password",                    
             },
              errorPlacement: function (error, element) {
             var lastError = $(element).data('lastError'),
                 newError = $(error).text();
+               
 
             $(element).data('lastError', newError);
 
             if(newError !== '' && newError !== lastError){
+            	 
                 $(element).tooltipster('content', newError);
                 $(element).tooltipster('show');
                 
                
+            }else {//added else to take care of tooltip error on modal and logo
+            	$(element).tooltipster('show');
+            	
             }
         },
         success: function (label, element) {
@@ -129,6 +142,7 @@ $(document).ready(function(){
                     data:dataString,
                     success: function(response){
                         if (response =='Successcorrect'){
+                        	
 							window.location='daytracker_screen.php';
 						}else {
 								alert("Something went wrong. User not created");
@@ -140,28 +154,37 @@ $(document).ready(function(){
                         //alert(JSON.stringify(err));
                     }
                 });
+                
                 return false; // block regular submit
             }
+            
         });
         
   //Closing Tooltips       
         $('#myModal').on('hidden.bs.modal', function (element) {       
- 	 		$('form input').tooltipster('hide');
+ 	 		$('#signupform input').tooltipster('disable');
+		});
+		 $('#myModal').on('shown.bs.modal', function (element) { 
+		 	 $('#signupform input').tooltipster('enable');     
 		});
 		
 		 
 		$('#sign').on('click', function (element) {
-		        	//alert("here");
-		 	 $('form input').tooltipster('hide');
+		        
+		 	 $('form input').tooltipster('disable');
 		});
 		$("#loginForm").mouseleave( function (element) {
-		        	//alert("here");
-		 	 $('form input').tooltipster('hide');
+		        	
+		        	$('form input').tooltipster('hide');
+		        	 //$('form input').tooltipster('disable');
+		 	
 		});
 		$("#loginForm").mouseenter( function (element) {
-		        	//alert("here");
-		 	 $('form input').tooltipster('show');
+		        	
+		        	 $('form input').tooltipster('enable');
+		 	// $('form input').tooltipster('show');
 		});
+		
 	
 });
 
